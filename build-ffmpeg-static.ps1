@@ -8,13 +8,18 @@
 #   - Overlay port in overlays/ffmpeg/
 #
 # Output: installed\*-windows-staticlib-md\lib\ will contain static .lib files
-#
-# Note: vcpkg's pkgconfig post-processing step fails with "operation not permitted"
-# on this machine (group policy). The actual FFmpeg compilation succeeds, but vcpkg
-# reports BUILD_FAILED. The workaround is to copy the built files from packages\ to
-# installed\ manually — this script does that automatically.
 
-$triplets = @("x64", "x86", "arm64")
+# Add Defender exclusions so vcpkg tools (pkgconf, conftest, msys2) aren't blocked
+# by group policy. This is idempotent — adding the same path twice is a no-op.
+Write-Host "Ensuring Windows Defender exclusions for vcpkg directories..."
+try {
+    Add-MpPreference -ExclusionPath "$PSScriptRoot\buildtrees" -ErrorAction Stop
+    Add-MpPreference -ExclusionPath "$PSScriptRoot\installed" -ErrorAction Stop
+    Add-MpPreference -ExclusionPath "$PSScriptRoot\downloads" -ErrorAction Stop
+} catch {
+    Write-Host "  Warning: could not add Defender exclusions (need admin?): $_"
+    Write-Host "  Build may fail if group policy blocks newly-built executables."
+}
 
 Write-Host "Building FFmpeg as static libraries for x64, x86, and arm64 architectures..."
 
@@ -27,42 +32,8 @@ Write-Host "Building FFmpeg as static libraries for x64, x86, and arm64 architec
     --host-triplet=x64-windows `
     --classic
 
-# Workaround: copy FFmpeg libs from packages/ to installed/ for any triplet where
-# vcpkg's pkgconfig step failed (the compilation itself succeeded).
-Write-Host ""
-Write-Host "Copying FFmpeg libs from packages to installed (pkgconfig workaround)..."
-
-foreach ($arch in $triplets) {
-    $triplet = "$arch-windows-staticlib-md"
-    $pkgDir = "$PSScriptRoot\packages\ffmpeg_$triplet"
-    $instDir = "$PSScriptRoot\installed\$triplet"
-
-    if (-not (Test-Path "$pkgDir\lib")) {
-        Write-Host "  $triplet : no package output found, skipping (build may have failed)"
-        continue
-    }
-
-    # Check if installed dir already has the ffmpeg libs (vcpkg succeeded for this triplet)
-    if (Test-Path "$instDir\lib\avcodec.lib") {
-        Write-Host "  $triplet : already installed, skipping"
-        continue
-    }
-
-    Write-Host "  $triplet : copying from packages..."
-
-    # Create target directories
-    New-Item -ItemType Directory -Force -Path "$instDir\lib" | Out-Null
-    New-Item -ItemType Directory -Force -Path "$instDir\include" | Out-Null
-    New-Item -ItemType Directory -Force -Path "$instDir\debug\lib" | Out-Null
-
-    # Copy release libs, headers, and debug libs
-    Copy-Item "$pkgDir\lib\*.lib" "$instDir\lib\" -Force
-    Copy-Item "$pkgDir\include\*" "$instDir\include\" -Recurse -Force
-    Copy-Item "$pkgDir\debug\lib\*.lib" "$instDir\debug\lib\" -Force
-}
-
 Write-Host ""
 Write-Host "Done. Verify with:"
-foreach ($arch in $triplets) {
-    Write-Host "  dir installed\$arch-windows-staticlib-md\lib\*.lib"
-}
+Write-Host "  dir installed\x64-windows-staticlib-md\lib\*.lib"
+Write-Host "  dir installed\x86-windows-staticlib-md\lib\*.lib"
+Write-Host "  dir installed\arm64-windows-staticlib-md\lib\*.lib"
