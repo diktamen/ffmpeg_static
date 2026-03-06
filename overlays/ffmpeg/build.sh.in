@@ -86,7 +86,7 @@ else
 fi
 
 case "@VCPKG_CMAKE_SYSTEM_NAME@" in
-    FreeBSD|OpenBSD)
+    *BSD)
         MAKE_BINARY="gmake"
         ;;
     *)
@@ -107,7 +107,7 @@ build_ffmpeg() {
 
     echo "=== CONFIGURING ==="
 
-    sh "$PATH_TO_SRC_DIR/configure" "--prefix=$PATH_TO_PACKAGE_DIR" @CONFIGURE_OPTIONS@ --arch=${BUILD_ARCH} ${!OPTION_VARIABLE} $@
+    sh "$PATH_TO_SRC_DIR/configure" "--prefix=$PATH_TO_PACKAGE_DIR" @CONFIGURE_OPTIONS@ ${EXTRA_CONFIGURE_OPTIONS} --arch=${BUILD_ARCH} ${!OPTION_VARIABLE} $@
 
     echo "=== BUILDING ==="
 
