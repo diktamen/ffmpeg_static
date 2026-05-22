@@ -7,6 +7,11 @@ REM
 REM Output: installed\*-windows-static-md\bin\ will contain .dll files
 REM         installed\*-windows-static-md\lib\ will contain import .lib files
 
+echo Clearing build directories...
+for %%D in (buildtrees installed packages) do (
+    if exist "%~dp0%%D" rd /s /q "%~dp0%%D"
+)
+
 echo Building FFmpeg as DLLs for x64, x86, and arm64 architectures...
 
 vcpkg install ffmpeg[ffmpeg,avcodec,avdevice,avfilter,avformat,core,swresample,swscale,mp3lame,opus,speex,vorbis]:x64-windows-static-md ffmpeg[ffmpeg,avcodec,avdevice,avfilter,avformat,core,swresample,swscale,mp3lame,opus,speex,vorbis]:x86-windows-static-md ffmpeg[ffmpeg,avcodec,avdevice,avfilter,avformat,core,swresample,swscale,mp3lame,opus,speex,vorbis]:arm64-windows-static-md --overlay-ports=overlays --overlay-triplets=triplets --host-triplet=x64-windows --classic

@@ -9,6 +9,16 @@
 #
 # Output: installed\*-windows-staticlib-md\lib\ will contain static .lib files
 
+# Clear build artifacts from any previous run to avoid cross-contamination.
+# Downloads are preserved — they contain cached tarballs and tools.
+Write-Host "Clearing build directories..."
+foreach ($dir in @("buildtrees", "installed", "packages")) {
+    $path = "$PSScriptRoot\$dir"
+    if (Test-Path $path) {
+        Remove-Item -Recurse -Force $path
+    }
+}
+
 # Add Defender exclusions so vcpkg tools (pkgconf, conftest, msys2) aren't blocked
 # by group policy. This is idempotent — adding the same path twice is a no-op.
 Write-Host "Ensuring Windows Defender exclusions for vcpkg directories..."
