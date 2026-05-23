@@ -53,28 +53,9 @@ foreach ($arch in @("x64", "x86", "arm64")) {
     $triplet = "$arch-windows-staticlib-md"
     $dest = "C:\libraries\ffmpeg_static\$arch"
 
-    New-Item -ItemType Directory -Force "$dest\lib" | Out-Null
-    Copy-Item "installed\$triplet\lib\*.lib" "$dest\lib" -Force
+    New-Item -ItemType Directory -Force $dest | Out-Null
+    Copy-Item "installed\$triplet\*" $dest -Recurse -Force
 
-    New-Item -ItemType Directory -Force "$dest\lib\pkgconfig" | Out-Null
-    if (Test-Path "installed\$triplet\lib\pkgconfig") {
-        Copy-Item "installed\$triplet\lib\pkgconfig\*.pc" "$dest\lib\pkgconfig" -Force
-    }
-
-    New-Item -ItemType Directory -Force "$dest\debug\lib" | Out-Null
-    New-Item -ItemType Directory -Force "$dest\debug\lib\pkgconfig" | Out-Null
-    Copy-Item "installed\$triplet\debug\lib\*.lib" "$dest\debug\lib" -Force
-    if (Test-Path "installed\$triplet\debug\lib\pkgconfig") {
-        Copy-Item "installed\$triplet\debug\lib\pkgconfig\*.pc" "$dest\debug\lib\pkgconfig" -Force
-    }
-
-    Copy-Item "installed\$triplet\include" "$dest\include" -Recurse -Force
-    Copy-Item "installed\$triplet\include" "$dest\debug\include" -Recurse -Force
-
-    $libs    = (Get-ChildItem "$dest\lib\*.lib").Count
-    $pcs     = (Get-ChildItem "$dest\lib\pkgconfig\*.pc" -ErrorAction SilentlyContinue).Count
-    $hdrs    = (Get-ChildItem "$dest\include" -Recurse -File).Count
-    $dbglibs = (Get-ChildItem "$dest\debug\lib\*.lib").Count
-    Write-Host "  $arch`: $libs libs, $pcs .pc files, $hdrs headers, $dbglibs debug libs"
+    Write-Host "  $arch`: done"
 }
 Write-Host "Done."

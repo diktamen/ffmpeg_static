@@ -37,36 +37,9 @@ foreach ($arch in @("x64", "x86", "arm64")) {
     $triplet = "$arch-windows-static-md"
     $dest = "C:\libraries\ffmpeg_dll\$arch"
 
-    New-Item -ItemType Directory -Force "$dest\bin" | Out-Null
-    New-Item -ItemType Directory -Force "$dest\lib" | Out-Null
-    Copy-Item "installed\$triplet\bin\*.dll" "$dest\bin" -Force
-    Copy-Item "installed\$triplet\lib\*.lib" "$dest\lib" -Force
+    New-Item -ItemType Directory -Force $dest | Out-Null
+    Copy-Item "installed\$triplet\*" $dest -Recurse -Force
 
-    $pdbs = Get-ChildItem "installed\$triplet\bin\*.pdb" -ErrorAction SilentlyContinue
-    if ($pdbs) { Copy-Item $pdbs.FullName "$dest\bin" -Force }
-
-    New-Item -ItemType Directory -Force "$dest\lib\pkgconfig" | Out-Null
-    Copy-Item "installed\$triplet\lib\pkgconfig\*.pc" "$dest\lib\pkgconfig" -Force
-
-    New-Item -ItemType Directory -Force "$dest\debug\bin" | Out-Null
-    New-Item -ItemType Directory -Force "$dest\debug\lib" | Out-Null
-    New-Item -ItemType Directory -Force "$dest\debug\lib\pkgconfig" | Out-Null
-    Copy-Item "installed\$triplet\debug\bin\*.dll" "$dest\debug\bin" -Force
-    Copy-Item "installed\$triplet\debug\lib\*.lib" "$dest\debug\lib" -Force
-    Copy-Item "installed\$triplet\debug\lib\pkgconfig\*.pc" "$dest\debug\lib\pkgconfig" -Force
-
-    $dbgpdbs = Get-ChildItem "installed\$triplet\debug\bin\*.pdb" -ErrorAction SilentlyContinue
-    if ($dbgpdbs) { Copy-Item $dbgpdbs.FullName "$dest\debug\bin" -Force }
-
-    Copy-Item "installed\$triplet\include" "$dest\include" -Recurse -Force
-    Copy-Item "installed\$triplet\include" "$dest\debug\include" -Recurse -Force
-
-    $dlls    = (Get-ChildItem "$dest\bin\*.dll").Count
-    $libs    = (Get-ChildItem "$dest\lib\*.lib").Count
-    $pcs     = (Get-ChildItem "$dest\lib\pkgconfig\*.pc").Count
-    $hdrs    = (Get-ChildItem "$dest\include" -Recurse -File).Count
-    $dbgdlls = (Get-ChildItem "$dest\debug\bin\*.dll").Count
-    $dbglibs = (Get-ChildItem "$dest\debug\lib\*.lib").Count
-    Write-Host "  $arch`: $dlls DLLs, $libs import libs, $pcs .pc files, $hdrs headers, $dbgdlls debug DLLs, $dbglibs debug libs"
+    Write-Host "  $arch`: done"
 }
 Write-Host "Done."
