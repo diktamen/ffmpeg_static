@@ -69,6 +69,7 @@ foreach ($arch in @("x64", "x86", "arm64")) {
     }
 
     Copy-Item "installed\$triplet\include" "$dest\include" -Recurse -Force
+    Copy-Item "installed\$triplet\include" "$dest\debug\include" -Recurse -Force
 
     $libs    = (Get-ChildItem "$dest\lib\*.lib").Count
     $pcs     = (Get-ChildItem "$dest\lib\pkgconfig\*.pc" -ErrorAction SilentlyContinue).Count

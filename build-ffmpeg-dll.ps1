@@ -59,6 +59,7 @@ foreach ($arch in @("x64", "x86", "arm64")) {
     if ($dbgpdbs) { Copy-Item $dbgpdbs.FullName "$dest\debug\bin" -Force }
 
     Copy-Item "installed\$triplet\include" "$dest\include" -Recurse -Force
+    Copy-Item "installed\$triplet\include" "$dest\debug\include" -Recurse -Force
 
     $dlls    = (Get-ChildItem "$dest\bin\*.dll").Count
     $libs    = (Get-ChildItem "$dest\lib\*.lib").Count
