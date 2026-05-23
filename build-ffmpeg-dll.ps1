@@ -6,7 +6,7 @@
 # Output: C:\libraries\ffmpeg_dll\{arch}\
 
 # Clear build artifacts from any previous run to avoid cross-contamination.
-# Downloads are preserved — they contain cached tarballs and tools.
+# Downloads are preserved - they contain cached tarballs and tools.
 Write-Host "Clearing build directories..."
 foreach ($dir in @("buildtrees", "installed", "packages")) {
     $path = "$PSScriptRoot\$dir"
@@ -27,7 +27,7 @@ Write-Host "Building FFmpeg as DLLs for x64, x86, and arm64 architectures..."
     --classic
 
 if ($LASTEXITCODE -ne 0) {
-    Write-Host "Build failed — aborting deploy."
+    Write-Host "Build failed - aborting deploy."
     exit $LASTEXITCODE
 }
 

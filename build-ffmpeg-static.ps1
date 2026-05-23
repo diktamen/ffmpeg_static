@@ -10,7 +10,7 @@
 # Output: C:\libraries\ffmpeg_static\{arch}\
 
 # Clear build artifacts from any previous run to avoid cross-contamination.
-# Downloads are preserved — they contain cached tarballs and tools.
+# Downloads are preserved - they contain cached tarballs and tools.
 Write-Host "Clearing build directories..."
 foreach ($dir in @("buildtrees", "installed", "packages")) {
     $path = "$PSScriptRoot\$dir"
@@ -20,7 +20,7 @@ foreach ($dir in @("buildtrees", "installed", "packages")) {
 }
 
 # Add Defender exclusions so vcpkg tools (pkgconf, conftest, msys2) aren't blocked
-# by group policy. This is idempotent — adding the same path twice is a no-op.
+# by group policy. This is idempotent - adding the same path twice is a no-op.
 Write-Host "Ensuring Windows Defender exclusions for vcpkg directories..."
 try {
     Add-MpPreference -ExclusionPath "$PSScriptRoot\buildtrees" -ErrorAction Stop
@@ -43,7 +43,7 @@ Write-Host "Building FFmpeg as static libraries for x64, x86, and arm64 architec
     --classic
 
 if ($LASTEXITCODE -ne 0) {
-    Write-Host "Build failed — aborting deploy."
+    Write-Host "Build failed - aborting deploy."
     exit $LASTEXITCODE
 }
 
