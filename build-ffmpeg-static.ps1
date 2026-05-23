@@ -7,7 +7,7 @@
 #   - Custom triplets in triplets/ (x64/x86/arm64-windows-staticlib-md.cmake)
 #   - Overlay port in overlays/ffmpeg/
 #
-# Output: installed\*-windows-staticlib-md\lib\ will contain static .lib files
+# Output: C:\libraries\ffmpeg_static\{arch}\
 
 # Clear build artifacts from any previous run to avoid cross-contamination.
 # Downloads are preserved — they contain cached tarballs and tools.
@@ -34,16 +34,38 @@ try {
 Write-Host "Building FFmpeg as static libraries for x64, x86, and arm64 architectures..."
 
 & "$PSScriptRoot\vcpkg.exe" install `
-    "ffmpeg[avcodec,avformat,core,swresample,mp3lame,opus,speex,vorbis]:x64-windows-staticlib-md" `
-    "ffmpeg[avcodec,avformat,core,swresample,mp3lame,opus,speex,vorbis]:x86-windows-staticlib-md" `
-    "ffmpeg[avcodec,avformat,core,swresample,mp3lame,opus,speex,vorbis]:arm64-windows-staticlib-md" `
+    "ffmpeg[avcodec,avformat,core,swresample,swscale,mp3lame,opus,speex,vorbis]:x64-windows-staticlib-md" `
+    "ffmpeg[avcodec,avformat,core,swresample,swscale,mp3lame,opus,speex,vorbis]:x86-windows-staticlib-md" `
+    "ffmpeg[avcodec,avformat,core,swresample,swscale,mp3lame,opus,speex,vorbis]:arm64-windows-staticlib-md" `
     --overlay-ports=overlays `
     --overlay-triplets=triplets `
     --host-triplet=x64-windows `
     --classic
 
+if ($LASTEXITCODE -ne 0) {
+    Write-Host "Build failed — aborting deploy."
+    exit $LASTEXITCODE
+}
+
 Write-Host ""
-Write-Host "Done. Verify with:"
-Write-Host "  dir installed\x64-windows-staticlib-md\lib\*.lib"
-Write-Host "  dir installed\x86-windows-staticlib-md\lib\*.lib"
-Write-Host "  dir installed\arm64-windows-staticlib-md\lib\*.lib"
+Write-Host "Deploying to C:\libraries\ffmpeg_static\..."
+foreach ($arch in @("x64", "x86", "arm64")) {
+    $triplet = "$arch-windows-staticlib-md"
+    $dest = "C:\libraries\ffmpeg_static\$arch"
+
+    New-Item -ItemType Directory -Force "$dest\lib" | Out-Null
+    Copy-Item "installed\$triplet\lib\*.lib" "$dest\lib" -Force
+
+    New-Item -ItemType Directory -Force "$dest\lib\pkgconfig" | Out-Null
+    if (Test-Path "installed\$triplet\lib\pkgconfig") {
+        Copy-Item "installed\$triplet\lib\pkgconfig\*.pc" "$dest\lib\pkgconfig" -Force
+    }
+
+    Copy-Item "installed\$triplet\include" "$dest\include" -Recurse -Force
+
+    $libs = (Get-ChildItem "$dest\lib\*.lib").Count
+    $pcs  = (Get-ChildItem "$dest\lib\pkgconfig\*.pc" -ErrorAction SilentlyContinue).Count
+    $hdrs = (Get-ChildItem "$dest\include" -Recurse -File).Count
+    Write-Host "  $arch`: $libs libs, $pcs .pc files, $hdrs headers"
+}
+Write-Host "Done."
