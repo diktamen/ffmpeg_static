@@ -17,6 +17,7 @@ vcpkg_from_github(
         0046-fix-msvc-detection.patch
         0047-fix-msvc-utf8.patch
         0048-backport-23039.patch
+        0100-http-connection-token-parse.patch  # diktamen: Connection header token parse
 )
 
 if(SOURCE_PATH MATCHES " ")
