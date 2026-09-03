@@ -315,6 +315,7 @@ __pycache__/
 ############################################################
 vcpkg.disable-metrics
 archives
+vcpkg_cache/
 .DS_Store
 prefab/
 *.swp
