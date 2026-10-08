@@ -1,3 +1,3 @@
-set(qtimageformats_HASH "07534cf1d3506a8821f0fc985db84b7ea6513a3b23861c1410bdcbe16f74f13ab1633ece1058750f4ffcf9b76be2b3754d14ddba7cd43d24fdb93011fa4c4cf4")
-set(qtimageformats_URL "https://download.qt.io/archive/qt/6.11/6.11.0/submodules/qtimageformats-everywhere-src-6.11.0.tar.xz;https://mirrors.ocf.berkeley.edu/qt/archive/qt/6.11/6.11.0/submodules/qtimageformats-everywhere-src-6.11.0.tar.xz")
-set(qtimageformats_FILENAME "qtimageformats-everywhere-src-6.11.0.tar.xz")
+set(qtimageformats_HASH "3d50005ccba1925c0fc3186ad41f45db540d9eab4040ca4c3f6b5e85e5f7be690aac29cb7662a795af5728942e4865f4cdc579ec8336feb296c41ea13f75f3bd")
+set(qtimageformats_URL "https://download.qt.io/archive/qt/6.11/6.11.2/submodules/qtimageformats-everywhere-src-6.11.2.tar.xz;https://mirrors.ocf.berkeley.edu/qt/archive/qt/6.11/6.11.2/submodules/qtimageformats-everywhere-src-6.11.2.tar.xz")
+set(qtimageformats_FILENAME "qtimageformats-everywhere-src-6.11.2.tar.xz")

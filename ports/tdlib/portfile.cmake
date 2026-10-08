@@ -1,19 +1,13 @@
-vcpkg_download_distfile(FIX_TDCORE_PATCH
-    URLS https://github.com/tdlib/td/commit/49b3bcbb6bfebf2ed44dd9f25102d2e1a94a58c4.diff?full_index=1
-    FILENAME tdlib-fix-tdcore-49b3bcbb6bfebf2ed44dd9f25102d2e1a94a58c4.diff
-    SHA512 ef8b69e68830474a9af0b9f3d2d13eaf8c0383d1d74bc123e4b6f68c398d400b73f1154b0c1264c8ce99eb20a0ee392336306e5de12fed759a5bac184a6cca74
-)
-
 vcpkg_from_github(
     OUT_SOURCE_PATH SOURCE_PATH
     REPO tdlib/td
-    REF 7f163d850abbebecf749e99fb412271cc1f4e805
+    REF bc9c263e2bfee06aaab41e82db51a103376030bc
     HEAD_REF master
-    SHA512 6cebc7f655267abbbdfca1717c36004c2ae11626420fe0ce748e402ca53e972b6cbad2ca34607d04e66e28cd740a5faf215505273845adb06075db4d09cd8e46
+    SHA512 5781ee182b009c82e7764f0ad84e3e74069724763483a4726ae7388911920323fc42be64ae2d122daa7d89ada14c899e71f6fa7a3fc62669924dcedf3c06c28e
     PATCHES
-        fix-pc.patch
         fix-cross-compile.patch
-        "${FIX_TDCORE_PATCH}"
+        # Exclude uninstalled benchmarks/CLI from default builds and disable ambient PHP documentation generation.
+        fix-packaging.patch
 )
 
 vcpkg_add_to_path(PREPEND "${CURRENT_HOST_INSTALLED_DIR}/tools/gperf")
@@ -130,6 +124,8 @@ vcpkg_cmake_configure(
         -DTD_ENABLE_MULTI_PROCESSOR_COMPILATION=${VCPKG_DETECTED_MSVC}
         -DTD_INSTALL_HOST_GENERATORS=${_tdlib_install_gen}
         -DBUILD_TESTING=OFF
+        -DCMAKE_DISABLE_FIND_PACKAGE_Crc32c=ON
+        -DCMAKE_DISABLE_FIND_PACKAGE_Readline=ON
     MAYBE_UNUSED_VARIABLES
         TD_ENABLE_MULTI_PROCESSOR_COMPILATION
         TD_INSTALL_HOST_GENERATORS
@@ -156,4 +152,21 @@ if("tools" IN_LIST FEATURES AND NOT VCPKG_CROSSCOMPILING)
 endif()
 
 file(REMOVE_RECURSE "${CURRENT_PACKAGES_DIR}/debug/include")
-vcpkg_install_copyright(FILE_LIST "${SOURCE_PATH}/LICENSE_1_0.txt")
+set(copyright_files
+    "${SOURCE_PATH}/LICENSE_1_0.txt"
+    "${SOURCE_PATH}/sqlite/sqlite/LICENSE"
+)
+set(copyright_options "")
+if("tools" IN_LIST FEATURES AND NOT VCPKG_CROSSCOMPILING)
+    list(APPEND copyright_files
+        "${SOURCE_PATH}/td/generate/tl-parser/LICENSE"
+        "${SOURCE_PATH}/td/generate/tl-parser/tl-parser.h"
+    )
+    if(VCPKG_TARGET_IS_WINDOWS)
+        list(APPEND copyright_files
+            "${SOURCE_PATH}/td/generate/tl-parser/wgetopt.h"
+        )
+        set(copyright_options COMMENT "The LGPL 2.1 license text for the GNU getopt code in the Windows tl-parser tool is not included in the upstream repository. It can be obtained from https://www.gnu.org/licenses/old-licenses/lgpl-2.1.txt.")
+    endif()
+endif()
+vcpkg_install_copyright(FILE_LIST ${copyright_files} ${copyright_options})

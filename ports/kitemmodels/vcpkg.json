@@ -1,7 +1,6 @@
 {
   "name": "kitemmodels",
-  "version": "6.25.0",
-  "port-version": 1,
+  "version": "6.30.0",
   "description": "Models for Qt Model/View system",
   "homepage": "https://invent.kde.org/frameworks/kitemmodels",
   "documentation": "https://api.kde.org/kitemmodels-index.html",
@@ -19,5 +18,16 @@
       "name": "vcpkg-cmake-config",
       "host": true
     }
-  ]
+  ],
+  "features": {
+    "qml": {
+      "description": "Build QML integration and plugins",
+      "dependencies": [
+        {
+          "name": "qtdeclarative",
+          "default-features": false
+        }
+      ]
+    }
+  }
 }

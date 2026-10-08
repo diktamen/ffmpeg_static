@@ -1,130 +1,129 @@
 {
-  "schema-version": 1,
+  "schema-version": 2,
   "tools": [
     {
       "name": "python3",
       "os": "windows",
-      "version": "3.14.4",
+      "version": "3.14.7",
       "executable": "python.exe",
-      "url": "https://www.python.org/ftp/python/3.14.4/python-3.14.4-embed-win32.zip",
-      "sha512": "0d5cdb41bf3a9081a93dd6f80a6761fee4f145ac397f73b7b15669d35da9c780d98e18bf71af71c164bf5ce3c6d8540a7c1775455ff9f0142c17ce0d47aac40a",
-      "archive": "python-3.14.4-embed-win32.zip"
+      "url": "https://www.python.org/ftp/python/3.14.7/python-3.14.7-embed-win32.zip",
+      "sha512": "1f73cbfff5f1b28a7dc5752143e45342578fb391451c306c7bc9cf12f9909c21da458c24a81346f0c02f6404c4b652c2c3ff51e6ab667f0e69c6a7e29f55fba0",
+      "archive": "python-3.14.7-embed-win32.zip"
     },
     {
       "name": "python3",
       "os": "windows",
       "arch": "amd64",
-      "version": "3.14.4",
+      "version": "3.14.7",
       "executable": "python.exe",
-      "url": "https://www.python.org/ftp/python/3.14.4/python-3.14.4-embed-amd64.zip",
-      "sha512": "232d245cecdf2ef697e01925ea50317911f7d97dec83e6c7d21f3d8112f0ca424d315f901588de9246797eb1bc51f725b3736790af62753e186395f3878ac68c",
-      "archive": "python-3.14.4-embed-amd64.zip"
+      "url": "https://www.python.org/ftp/python/3.14.7/python-3.14.7-embed-amd64.zip",
+      "sha512": "c62810365c120d192767c02b471ea38d100d29ae8332fa00318d1ee66fa7f75b14f01962d3a1b47e935994d2b1e4a76f3bc44bc2bc67cbf0618a2214dfb73a02",
+      "archive": "python-3.14.7-embed-amd64.zip"
     },
     {
       "name": "python3",
       "os": "windows",
       "arch": "arm64",
-      "version": "3.14.4",
+      "version": "3.14.7",
       "executable": "python.exe",
-      "url": "https://www.python.org/ftp/python/3.14.4/python-3.14.4-embed-arm64.zip",
-      "sha512": "9e88d8f1ea1137b43ae7b655731f89bea9874841c88fda8a3519e1e20a598e0f1c7daeccd16f3cf7c8e77e5febc30cf990db8919fce86337ab1751655a77fe57",
-      "archive": "python-3.14.4-embed-arm64.zip"
+      "url": "https://www.python.org/ftp/python/3.14.7/python-3.14.7-embed-arm64.zip",
+      "sha512": "9abaf6d410a597280627e2921bb63128dc59f54159af14011c98c271fcebfe2cec26b23aa6ab207fe64cdac3a268b72864ee95d3dca0d8025c16a19c2346801b",
+      "archive": "python-3.14.7-embed-arm64.zip"
     },
     {
       "name": "cmake",
       "os": "windows",
       "arch": "amd64",
-      "version": "4.3.2",
-      "executable": "cmake-4.3.2-windows-x86_64/bin/cmake.exe",
-      "url": "https://github.com/Kitware/CMake/releases/download/v4.3.2/cmake-4.3.2-windows-x86_64.zip",
-      "sha512": "4484c3a27505e54604129e778069268a711ada3583e6cd516797e35d581e5caf96a3246d9666ab6ab7d7f297720d1a17a8c70ee65e09027023025bb454a48971",
-      "archive": "cmake-4.3.2-windows-x86_64.zip"
+      "version": "4.4.3",
+      "executable": "cmake-4.4.3-windows-x86_64/bin/cmake.exe",
+      "url": "https://github.com/Kitware/CMake/releases/download/v4.4.3/cmake-4.4.3-windows-x86_64.zip",
+      "sha512": "5f8527e18bffdf5113a64238442093468fce80c8a5f99e1b5eb217e0d73796eb7a2a236ee0c522de3424cb87a1abb3153fcecdb20d8d338c8a607667c9b37c90",
+      "archive": "cmake-4.4.3-windows-x86_64.zip"
     },
     {
       "name": "cmake",
       "os": "windows",
       "arch": "arm64",
-      "version": "4.3.2",
-      "executable": "cmake-4.3.2-windows-arm64/bin/cmake.exe",
-      "url": "https://github.com/Kitware/CMake/releases/download/v4.3.2/cmake-4.3.2-windows-arm64.zip",
-      "sha512": "b3e88db93a1a1cd9a024f4923394dc95b7200c819c27a091a577ec90c53a0465abf024c57384b332235779a3b342e761c20ab83ff9b55c9460695bb38f6594ad",
-      "archive": "cmake-4.3.2-windows-arm64.zip"
+      "version": "4.4.3",
+      "executable": "cmake-4.4.3-windows-arm64/bin/cmake.exe",
+      "url": "https://github.com/Kitware/CMake/releases/download/v4.4.3/cmake-4.4.3-windows-arm64.zip",
+      "sha512": "06261d6381c44644ed89c80b401c06c86fb5e42427a16fc694ba5f5f632c5c0c56e127653635439897c9f416c68b36a9dd3b03e2342fc6fa5993932d2d4966a2",
+      "archive": "cmake-4.4.3-windows-arm64.zip"
     },
     {
       "name": "cmake",
       "os": "osx",
-      "version": "4.3.2",
-      "executable": "cmake-4.3.2-macos-universal/CMake.app/Contents/bin/cmake",
-      "url": "https://github.com/Kitware/CMake/releases/download/v4.3.2/cmake-4.3.2-macos-universal.tar.gz",
-      "sha512": "e7503a37db108290252196cd0f348e49ab9b889eacdac1ab08ab12d397be2d1b12820cdb430a467ed4717e25f1e9fea828b51cab068ff7d0ccba1a9e584441b1",
-      "archive": "cmake-4.3.2-macos-universal.tar.gz"
+      "version": "4.4.3",
+      "executable": "cmake-4.4.3-macos-universal/CMake.app/Contents/bin/cmake",
+      "url": "https://github.com/Kitware/CMake/releases/download/v4.4.3/cmake-4.4.3-macos-universal.tar.gz",
+      "sha512": "111dcd0564001e864847d2d59a3517a86d5c3cf0cb189190c097fdf1eb094492e5e9a5a00b05dafeba69018780f3435c47177c0621f5674586151b3578185bf5",
+      "archive": "cmake-4.4.3-macos-universal.tar.gz"
     },
     {
       "name": "cmake",
       "os": "linux",
       "arch": "arm64",
-      "version": "4.3.2",
-      "executable": "cmake-4.3.2-linux-aarch64/bin/cmake",
-      "url": "https://github.com/Kitware/CMake/releases/download/v4.3.2/cmake-4.3.2-linux-aarch64.tar.gz",
-      "sha512": "ef03707e0e7514768ee34dca20fe69ab4a5c0671de6978a03f72b3242a4242f776c1a821ad367613841554ebcc3f5df392a77835c8acfe82d53b999b2ef8c062",
-      "archive": "cmake-4.3.2-linux-aarch64.tar.gz"
+      "version": "4.4.3",
+      "executable": "cmake-4.4.3-linux-aarch64/bin/cmake",
+      "url": "https://github.com/Kitware/CMake/releases/download/v4.4.3/cmake-4.4.3-linux-aarch64.tar.gz",
+      "sha512": "b882aaa8a9019edbf146e0678531d1fa29e5e364f6e194126fd5f69235740fa1c3dcbe78567f2e318ebd96ea13602f4f50b7240fd751490d1dd5e15a33e80d15",
+      "archive": "cmake-4.4.3-linux-aarch64.tar.gz"
     },
     {
       "name": "cmake",
       "os": "linux",
       "arch": "amd64",
-      "version": "4.3.2",
-      "executable": "cmake-4.3.2-linux-x86_64/bin/cmake",
-      "url": "https://github.com/Kitware/CMake/releases/download/v4.3.2/cmake-4.3.2-linux-x86_64.tar.gz",
-      "sha512": "00ccdcc0520a6cdfa1b61fe4740d0e8da891a7887f0928de2e5f98b0062cc39b7b53fca5cb8a20430c0c4a5be5fb164a6b03120c2073c67118d7b6419f2857b9",
-      "archive": "cmake-4.3.2-linux-x86_64.tar.gz"
+      "version": "4.4.3",
+      "executable": "cmake-4.4.3-linux-x86_64/bin/cmake",
+      "url": "https://github.com/Kitware/CMake/releases/download/v4.4.3/cmake-4.4.3-linux-x86_64.tar.gz",
+      "sha512": "24a4299dfe25d09a89879218f03c9471c2fbe38763820ac19378aa7d12b43ae9d7777628364aeae759b7117d81fe95c9c30c8fe2d36bf89b52b9884f810444ad",
+      "archive": "cmake-4.4.3-linux-x86_64.tar.gz"
     },
     {
       "name": "git",
       "os": "windows",
       "arch": "arm64",
-      "version": "2.7.4",
+      "version": "2.55.0.windows.5",
+      "min-version": "2.7.4",
       "executable": "clangarm64/bin/git.exe",
-      "url": "https://github.com/git-for-windows/git/releases/download/v2.54.0.windows.1/PortableGit-2.54.0-arm64.7z.exe",
-      "sha512": "ba335e5f2334aad4bcef17837486505b2d79346057d18b54b669c0e07e3bbeaa194cf5ea20232fb578fbb1fe6a822a427c2db42b5e0a099dbc4003e9c1af4954",
-      "archive": "PortableGit-2.54.0-arm64.7z.exe"
+      "url": "https://github.com/git-for-windows/git/releases/download/v2.55.0.windows.5/PortableGit-2.55.0.5-arm64.7z.exe",
+      "sha512": "8c43d5fb2a4e5523ba4eee5c7e29745fea4d8e739872591767ff27947491242a629de95d932c81c626290f1481a8701920d1b73a04c5679644a4f712595eac5b",
+      "archive": "PortableGit-2.55.0.5-arm64.7z.exe"
     },
     {
       "name": "git",
       "os": "windows",
       "arch": "amd64",
-      "version": "2.7.4",
+      "version": "2.55.0.windows.5",
+      "min-version": "2.7.4",
       "executable": "mingw64/bin/git.exe",
-      "url": "https://github.com/git-for-windows/git/releases/download/v2.54.0.windows.1/PortableGit-2.54.0-64-bit.7z.exe",
-      "sha512": "0783e36b8809b55c2786d68af1e8de732d9121ad7e55b50a24c4779b2431adce0e4234d79db1ec83b4d8b300924b2b325459fb11da53ef9b114239340ccb4a9e",
-      "archive": "PortableGit-2.54.0-64-bit.7z.exe"
+      "url": "https://github.com/git-for-windows/git/releases/download/v2.55.0.windows.5/PortableGit-2.55.0.5-64-bit.7z.exe",
+      "sha512": "99b38487de8dcc20741a5b74bdd4b91bb891cd15195174b5552eb148367ad21c43b9575c9185f3ae2372e466180bb9e99672eeefec71f7ce48841bee58bc851b",
+      "archive": "PortableGit-2.55.0.5-64-bit.7z.exe"
     },
     {
       "name": "git",
       "os": "linux",
-      "version": "2.7.4",
-      "executable": ""
+      "min-version": "2.7.4"
     },
     {
       "name": "git",
       "os": "osx",
-      "version": "2.7.4",
-      "executable": ""
+      "min-version": "2.7.4"
     },
     {
       "name": "git",
       "os": "freebsd",
-      "version": "2.7.4",
-      "executable": ""
+      "min-version": "2.7.4"
     },
     {
       "name": "gsutil",
       "os": "windows",
       "version": "5.37",
       "executable": "google-cloud-sdk/bin/gsutil.cmd",
-      "url": "https://dl.google.com/dl/cloudsdk/channels/rapid/downloads/google-cloud-sdk-567.0.0-windows-x86_64-bundled-python.zip",
-      "sha512": "5829f8991bd1a5d07daf2e101425c4483a5c93c4526ab410b6f21e8b603f8e5ee6d899ccc9f48f6835c5f8786ed46d111bffc6488af11198dc255891f0726e52",
-      "archive": "google-cloud-sdk-567.0.0-windows-x86_64-bundled-python.zip"
+      "url": "https://dl.google.com/dl/cloudsdk/channels/rapid/downloads/google-cloud-sdk-583.0.0-windows-x86_64-bundled-python.zip",
+      "sha512": "2c99ef3a65b42ef1fe89b21dd660dbbdff7bd78710cb8f1b91a02d30648c6e2083a4c9cdbb240cf0ff36effd849ca077f6f02755e336f8471d5ac766f243a07d",
+      "archive": "google-cloud-sdk-583.0.0-windows-x86_64-bundled-python.zip"
     },
     {
       "name": "gsutil",
@@ -155,26 +154,26 @@
     {
       "name": "nuget",
       "os": "windows",
-      "version": "7.3.1",
+      "version": "7.9.0",
       "executable": "nuget.exe",
-      "url": "https://dist.nuget.org/win-x86-commandline/v7.3.1/nuget.exe",
-      "sha512": "f882d5dd56282391f37229c8d009c5be6a2e494951345ea389d96f6dbb35698eb296e03a57675c8acdf7540d5a8e8992eae5fffa7eba8a74fa2f7b86a6a0155a"
+      "url": "https://dist.nuget.org/win-x86-commandline/v7.9.0/nuget.exe",
+      "sha512": "9ee7e39204f1825f6c1ca5c75242ccc3a9e85e978ae090d4f7ab9307b03021c8e8ec0feb170ec61401ccc9562fd52d2f2779af7f8f78a591caaf1a11416ff9df"
     },
     {
       "name": "nuget",
       "os": "linux",
-      "version": "7.3.1",
+      "version": "7.9.0",
       "executable": "nuget.exe",
-      "url": "https://dist.nuget.org/win-x86-commandline/v7.3.1/nuget.exe",
-      "sha512": "f882d5dd56282391f37229c8d009c5be6a2e494951345ea389d96f6dbb35698eb296e03a57675c8acdf7540d5a8e8992eae5fffa7eba8a74fa2f7b86a6a0155a"
+      "url": "https://dist.nuget.org/win-x86-commandline/v7.9.0/nuget.exe",
+      "sha512": "9ee7e39204f1825f6c1ca5c75242ccc3a9e85e978ae090d4f7ab9307b03021c8e8ec0feb170ec61401ccc9562fd52d2f2779af7f8f78a591caaf1a11416ff9df"
     },
     {
       "name": "nuget",
       "os": "osx",
-      "version": "7.3.1",
+      "version": "7.9.0",
       "executable": "nuget.exe",
-      "url": "https://dist.nuget.org/win-x86-commandline/v7.3.1/nuget.exe",
-      "sha512": "f882d5dd56282391f37229c8d009c5be6a2e494951345ea389d96f6dbb35698eb296e03a57675c8acdf7540d5a8e8992eae5fffa7eba8a74fa2f7b86a6a0155a"
+      "url": "https://dist.nuget.org/win-x86-commandline/v7.9.0/nuget.exe",
+      "sha512": "9ee7e39204f1825f6c1ca5c75242ccc3a9e85e978ae090d4f7ab9307b03021c8e8ec0feb170ec61401ccc9562fd52d2f2779af7f8f78a591caaf1a11416ff9df"
     },
     {
       "name": "coscli",
@@ -234,29 +233,29 @@
       "name": "7zip",
       "os": "windows",
       "arch": "amd64",
-      "version": "26.01",
+      "version": "26.03",
       "executable": "7z.exe",
-      "url": "https://github.com/ip7z/7zip/releases/download/26.01/7z2601-x64.exe",
-      "sha512": "e52d5050c8fe4c0a09bd482d36eb1377cf342c4739060d94094c4acb5aab1e53fa3842f64dec7b5df3b3bdc7394a8bc9a9cd7a88808342c1136dd9ce9fe5a0a2",
-      "archive": "7z2601-x64.7z.exe"
+      "url": "https://github.com/ip7z/7zip/releases/download/26.03/7z2603-x64.exe",
+      "sha512": "50025bab628b69f8eb35a590900093814e540ce7ffef8c676a1198e2d2a3f1dcdc44f04f92c28ca89bf6ee869fad3710786e14073c7db36281e8f7a4c495ea7f",
+      "archive": "7z2603-x64.7z.exe"
     },
     {
       "name": "7zip",
       "os": "windows",
       "arch": "arm64",
-      "version": "26.01",
+      "version": "26.03",
       "executable": "7z.exe",
-      "url": "https://github.com/ip7z/7zip/releases/download/26.01/7z2601-arm64.exe",
-      "sha512": "57d2fb50a28952daf31407ce3f4b05356309f7dd93f24752f9ee56b57642dbdde93a5e3577e4c8833383ced699ab514ea7c1bc12f626a686b3f266c018223bdd",
-      "archive": "7z2601-arm64.7z.exe"
+      "url": "https://github.com/ip7z/7zip/releases/download/26.03/7z2603-arm64.exe",
+      "sha512": "323e07eeab30fd3179b5b2c8860052bb77b4df56cc7a4e1eba541795d126ac2ddfbf3368bd64ff6fa36713f7dcbaa8eb22d5ca4ca91745246d95f4fb9a021a13",
+      "archive": "7z2603-arm64.7z.exe"
     },
     {
       "name": "7zr",
       "os": "windows",
-      "version": "26.01",
+      "version": "26.03",
       "executable": "7zr.exe",
-      "url": "https://github.com/ip7z/7zip/releases/download/26.01/7zr.exe",
-      "sha512": "f798fab87c2bcdeeb43c1ec2f1976fcc6213f1cecb88d7da6410c6a0f4db3ffda4794f462af3525cb4c86ade0bf6ba410cd4c6a96299c4e695dfeb3b05d06baa"
+      "url": "https://github.com/ip7z/7zip/releases/download/26.03/7zr.exe",
+      "sha512": "211a97487c573b8611dfe3acacbd361ffd41a888a9d63c69f2a7b52cbadc686a424ea08ec88c9566e4e1365c5d6caf1825865440f79f4a751fefb27fe9f0bea9"
     },
     {
       "name": "ninja",
@@ -311,251 +310,251 @@
       "name": "powershell-core",
       "os": "windows",
       "arch": "x64",
-      "version": "7.5.4",
+      "version": "7.6.6",
       "executable": "pwsh.exe",
-      "url": "https://github.com/PowerShell/PowerShell/releases/download/v7.6.1/PowerShell-7.6.1-win-x64.zip",
-      "sha512": "ad3190e3dda022b35e459193c5544583cfd111aa0dd462a76cffc029a61df027164650ccd4133bbe9b5b8db74e99b5e08ca9c930837dacb8e8b7b87f3ed1e20d",
-      "archive": "PowerShell-7.6.1-win-x64.zip"
+      "url": "https://github.com/PowerShell/PowerShell/releases/download/v7.6.6/PowerShell-7.6.6-win-x64.zip",
+      "sha512": "d95037cfa3ea9df5287a409680bb2cf122451760e9b07e3d9b61cda2155262326911d24643cb1018da6fd899a9c5bd1f30055ca7b74f785b72b6dd99ef3a54fa",
+      "archive": "PowerShell-7.6.6-win-x64.zip"
     },
     {
       "name": "powershell-core",
       "os": "windows",
       "arch": "arm64",
-      "version": "7.5.4",
+      "version": "7.6.6",
       "executable": "pwsh.exe",
-      "url": "https://github.com/PowerShell/PowerShell/releases/download/v7.6.1/PowerShell-7.6.1-win-arm64.zip",
-      "sha512": "c50309e3b48e7c37536429c4a4df746a04b89fed049983d39ae2a2e29cdd32b05e0c63c0de6b130459d41956039c325c5f7e2ae669128c57c0d471bc4805e0fb",
-      "archive": "PowerShell-7.6.1-win-arm64.zip"
+      "url": "https://github.com/PowerShell/PowerShell/releases/download/v7.6.6/PowerShell-7.6.6-win-arm64.zip",
+      "sha512": "178d3f3b39a6abac8dcd8c161f1f1116c3265d8034ed20b4bb8f88164485dbf3b784ecce4353112c57d230dae236dc37fac2f3cc59b93752bb631c5628988598",
+      "archive": "PowerShell-7.6.6-win-arm64.zip"
     },
     {
       "name": "powershell-core",
       "os": "linux",
       "arch": "x64",
-      "version": "7.5.4",
+      "version": "7.6.6",
       "executable": "pwsh",
-      "url": "https://github.com/PowerShell/PowerShell/releases/download/v7.6.1/powershell-7.6.1-linux-x64.tar.gz",
-      "sha512": "2a0670a70d02dd1cb0481483a45cebde818afd93970b2a787efd2adbc94c8a54496dc20ab4b2bdb52110eedb4266cf3e44a2b868b132ffc6b98232175a0bec52",
-      "archive": "powershell-7.6.1-linux-x64.tar.gz"
+      "url": "https://github.com/PowerShell/PowerShell/releases/download/v7.6.6/powershell-7.6.6-linux-x64.tar.gz",
+      "sha512": "e81cc03b2a58ad004f087486ec3140b8bdc6d72b2f652dcf29c2db13cdbd2937a734ba839018bea1e1c9db6e35630e1f2df0a419d5a5005501adf2ad3075872b",
+      "archive": "powershell-7.6.6-linux-x64.tar.gz"
     },
     {
       "name": "powershell-core",
       "os": "linux",
       "arch": "arm64",
-      "version": "7.5.4",
+      "version": "7.6.6",
       "executable": "pwsh",
-      "url": "https://github.com/PowerShell/PowerShell/releases/download/v7.6.1/powershell-7.6.1-linux-arm64.tar.gz",
-      "sha512": "f165e34db2fe6799583a6847871f30c1096404b3637306a2ec8a1e646569810f5f78eff2bddc37eff36e85755a86cff4b00a147b975a5eb020fb6f8b240223f3",
-      "archive": "powershell-7.6.1-linux-arm64.tar.gz"
+      "url": "https://github.com/PowerShell/PowerShell/releases/download/v7.6.6/powershell-7.6.6-linux-arm64.tar.gz",
+      "sha512": "3d184b33803842310f97311773e7b5977a55319b56b46d995d2bb803f1f9bcb3c43adedb9b5654c7a11a5089e2f1f8b0bf6d7124dbe0ecbbbca1d58352d54b21",
+      "archive": "powershell-7.6.6-linux-arm64.tar.gz"
     },
     {
       "name": "powershell-core",
       "os": "osx",
       "arch": "x64",
-      "version": "7.5.4",
+      "version": "7.6.6",
       "executable": "pwsh",
-      "url": "https://github.com/PowerShell/PowerShell/releases/download/v7.6.1/powershell-7.6.1-osx-x64.tar.gz",
-      "sha512": "6923052c23b1faeba784f9fe440a5319b17ff23170263369ea808eb9df3893031408fdd30986f42206de5cb6c187a6844757a2da457afd5a1d09b1cc90ba01c6",
-      "archive": "powershell-7.6.1-osx-x64.tar.gz"
+      "url": "https://github.com/PowerShell/PowerShell/releases/download/v7.6.6/powershell-7.6.6-osx-x64.tar.gz",
+      "sha512": "66c248efa4a613ec86988288e59fdbfc9fe5c6b62ef614dd49077e4bdb987b8a78de2c026575edf6ea5498836f2e5cc765a89a9cdec023e56918ec0a96a174e7",
+      "archive": "powershell-7.6.6-osx-x64.tar.gz"
     },
     {
       "name": "powershell-core",
       "os": "osx",
       "arch": "arm64",
-      "version": "7.5.4",
+      "version": "7.6.6",
       "executable": "pwsh",
-      "url": "https://github.com/PowerShell/PowerShell/releases/download/v7.6.1/powershell-7.6.1-osx-arm64.tar.gz",
-      "sha512": "5a4daadc9fa85ae55a47a5a701c7c9e14552b09f03f4b709b1d7c83f71e7f89af1a5bfb900718637a3d1ed8e5cb2f829ca14481ff8634ca0b2e44c04a3394061",
-      "archive": "powershell-7.6.1-osx-arm64.tar.gz"
+      "url": "https://github.com/PowerShell/PowerShell/releases/download/v7.6.6/powershell-7.6.6-osx-arm64.tar.gz",
+      "sha512": "04d5b12cf058e12fb6e02e938cd221255e5e043b7a3947140a380a693988bda65103bf45258b63a61848c8aaf95d405bc872b26b75849a8da7e46c3f4a81237e",
+      "archive": "powershell-7.6.6-osx-arm64.tar.gz"
     },
     {
       "name": "node",
       "os": "windows",
       "arch": "x64",
-      "version": "24.15.0",
-      "executable": "node-v24.15.0-win-x64/node.exe",
-      "url": "https://nodejs.org/dist/v24.15.0/node-v24.15.0-win-x64.7z",
-      "sha512": "f768ab4dc00459c8a20cd58feb9cc0a9dcd6331418fffe3cffc8cf1a8f5b387c2bb43bb9c6b00f57518245d7224ae26f5977df779f4d50dca8272a2ed4b59111",
-      "archive": "node-v24.15.0-win-x64.7z"
+      "version": "24.21.0",
+      "executable": "node-v24.21.0-win-x64/node.exe",
+      "url": "https://nodejs.org/dist/v24.21.0/node-v24.21.0-win-x64.7z",
+      "sha512": "fcc3a29367f34e18fafb2dffd8934506dc5b1bbbf3464958657dd7cbfc291f5b161e33743f78eb2c3dbf0562c8abc21d836e240efb91ea2f98827458eac7a5e5",
+      "archive": "node-v24.21.0-win-x64.7z"
     },
     {
       "name": "node",
       "os": "windows",
       "arch": "arm64",
-      "version": "24.15.0",
-      "executable": "node-v24.15.0-win-arm64/node.exe",
-      "url": "https://nodejs.org/dist/v24.15.0/node-v24.15.0-win-arm64.7z",
-      "sha512": "f0b43279c97d59eb2213555d143c8f60c564555179fa9d46716ee95ed3ab36536324ffe7dece40b8b14043506e53d7a77b2d4bad93014ee5d1aa4cbb6970ff8c",
-      "archive": "node-v24.15.0-win-arm64.7z"
+      "version": "24.21.0",
+      "executable": "node-v24.21.0-win-arm64/node.exe",
+      "url": "https://nodejs.org/dist/v24.21.0/node-v24.21.0-win-arm64.7z",
+      "sha512": "fb92092eef1353594296b4ad8ace8300a9e7440c95b98d43b868a512711049f6e3b7d2c9bc4e212c68d54cebca9b6a6d8dd3f975435fd5732a54c67f1d422e4d",
+      "archive": "node-v24.21.0-win-arm64.7z"
     },
     {
       "name": "node",
       "os": "linux",
       "arch": "x64",
-      "version": "24.15.0",
-      "executable": "node-v24.15.0-linux-x64/bin/node",
-      "url": "https://nodejs.org/dist/v24.15.0/node-v24.15.0-linux-x64.tar.gz",
-      "sha512": "455150401b5e2ca49fd38a913e1a58fa993111853aaeeac5f793407d14e93548270ae267564d083bd4d4f77d23518124644cff873bf04ab8af663be03f71e099",
-      "archive": "node-v24.15.0-linux-x64.tar.gz"
+      "version": "24.21.0",
+      "executable": "node-v24.21.0-linux-x64/bin/node",
+      "url": "https://nodejs.org/dist/v24.21.0/node-v24.21.0-linux-x64.tar.gz",
+      "sha512": "7b1c931a0985f21e1e577a8b72bda2c977e90c37019102fade06340fc09788a5d081fe442a17509c9a6fb26692e034853c5bd01d4828496b4a49c3c5612ab52a",
+      "archive": "node-v24.21.0-linux-x64.tar.gz"
     },
     {
       "name": "node",
       "os": "linux",
       "arch": "arm64",
-      "version": "24.15.0",
-      "executable": "node-v24.15.0-linux-arm64/bin/node",
-      "url": "https://nodejs.org/dist/v24.15.0/node-v24.15.0-linux-arm64.tar.gz",
-      "sha512": "91edde7e3374121e83283d7097d082d5ec70d2702f552ef6a6d034e3ac74a56605bad8c173ca9b070266b7282484c89c23eb505135ea6932bc12ba03b0252fea",
-      "archive": "node-v24.15.0-linux-arm64.tar.gz"
+      "version": "24.21.0",
+      "executable": "node-v24.21.0-linux-arm64/bin/node",
+      "url": "https://nodejs.org/dist/v24.21.0/node-v24.21.0-linux-arm64.tar.gz",
+      "sha512": "c047685a19d36223a4c8ed7e8ef1faf01de54a1525ac107d7f12ec27a0da2a09135b89d4cd82a6e55a36444b7f8ffabd435d9afea63b3dcac1613d68cbd01233",
+      "archive": "node-v24.21.0-linux-arm64.tar.gz"
     },
     {
       "name": "node",
       "os": "osx",
       "arch": "x64",
-      "version": "24.15.0",
-      "executable": "node-v24.15.0-darwin-x64/bin/node",
-      "url": "https://nodejs.org/dist/v24.15.0/node-v24.15.0-darwin-x64.tar.gz",
-      "sha512": "505149f8bc6650445db9993334ea1b1099d442690b6c804b4a1de80fff22bc744a4f786ea3aee8d6f33f08711aad5d4621e8241bd9fef5748c05463620709cef",
-      "archive": "node-v24.15.0-darwin-x64.tar.gz"
+      "version": "24.21.0",
+      "executable": "node-v24.21.0-darwin-x64/bin/node",
+      "url": "https://nodejs.org/dist/v24.21.0/node-v24.21.0-darwin-x64.tar.gz",
+      "sha512": "3982cb5d3f874fb66f845449e763eb9c3e8b48a143194b981de1e034fd7216526eefa8404f81a329af553db8b9987e6872c1ec94cd705a7bfc3b247a05e40e65",
+      "archive": "node-v24.21.0-darwin-x64.tar.gz"
     },
     {
       "name": "node",
       "os": "osx",
       "arch": "arm64",
-      "version": "24.15.0",
-      "executable": "node-v24.15.0-darwin-arm64/bin/node",
-      "url": "https://nodejs.org/dist/v24.15.0/node-v24.15.0-darwin-arm64.tar.gz",
-      "sha512": "95e717b3653d37579cceb9012c25da2471b77603d1920599cd2693e04b642031bf991cd465b0d8fe1f3e782ec4a1d4cdd8f3f39b76018c8c9aecb70d6d65743f",
-      "archive": "node-v24.15.0-darwin-arm64.tar.gz"
+      "version": "24.21.0",
+      "executable": "node-v24.21.0-darwin-arm64/bin/node",
+      "url": "https://nodejs.org/dist/v24.21.0/node-v24.21.0-darwin-arm64.tar.gz",
+      "sha512": "5d2c8c6a04f0503c0a614cfb5bd08ef1315039b0e3fcd368f392a647d98f2ab4b14dacaacc60fb20b9004a15a054d94998fe8b75ec479757b06c5707e2ad9d65",
+      "archive": "node-v24.21.0-darwin-arm64.tar.gz"
     },
     {
       "name": "dotnet",
       "os": "windows",
       "arch": "x64",
-      "version": "10.0.203",
+      "version": "10.0.401",
       "executable": "dotnet.exe",
-      "url": "https://builds.dotnet.microsoft.com/dotnet/Sdk/10.0.203/dotnet-sdk-10.0.203-win-x64.zip",
-      "sha512": "41486bb422746154171e0ede7c1d0021605430728e71b83e94368184e8c97802f9cb5151be2cd1285936b11e452ddc0728ee3766db187d428e50531ac0c2161c",
-      "archive": "dotnet-sdk-10.0.203-win-x64.zip"
+      "url": "https://builds.dotnet.microsoft.com/dotnet/Sdk/10.0.401/dotnet-sdk-10.0.401-win-x64.zip",
+      "sha512": "24b670ad3d923bfcf47df6c3b034152398b42f6dbc388e10d783aee1cfb5e5817d399fc0ae2a12cfa822a55e61d34830ccb15c50ef6efee437ab874bb7c79430",
+      "archive": "dotnet-sdk-10.0.401-win-x64.zip"
     },
     {
       "name": "dotnet",
       "os": "windows",
       "arch": "arm64",
-      "version": "10.0.203",
+      "version": "10.0.401",
       "executable": "dotnet.exe",
-      "url": "https://builds.dotnet.microsoft.com/dotnet/Sdk/10.0.203/dotnet-sdk-10.0.203-win-arm64.zip",
-      "sha512": "66e0939ce13b22267c19465060b522e940a61b6dc51c007a95ee6ccfc92def823ff7ff69f2120f1dde56c9ace2c0b687ec43547a5e50f82a9f5ca35c144bd9f7",
-      "archive": "dotnet-sdk-10.0.203-win-arm64.zip"
+      "url": "https://builds.dotnet.microsoft.com/dotnet/Sdk/10.0.401/dotnet-sdk-10.0.401-win-arm64.zip",
+      "sha512": "8272eaab6f06ad658b1976e19d88beed287a601f968b71d5c26b75d10587cf087665c599d2e136a911002f955c97f59aa8692581bbf6b8e7af5f82604c810256",
+      "archive": "dotnet-sdk-10.0.401-win-arm64.zip"
     },
     {
       "name": "dotnet",
       "os": "windows",
       "arch": "x86",
-      "version": "10.0.203",
+      "version": "10.0.401",
       "executable": "dotnet.exe",
-      "url": "https://builds.dotnet.microsoft.com/dotnet/Sdk/10.0.203/dotnet-sdk-10.0.203-win-x86.zip",
-      "sha512": "825ff0fd32dcecd4f0c76d19cad308c8462b9a29f3028b79560ba71e772b126a448bdad0c0411aa99d73b65a42893361c3b2815d28700e5640d3612fb862b1c4",
-      "archive": "dotnet-sdk-10.0.203-win-x86.zip"
+      "url": "https://builds.dotnet.microsoft.com/dotnet/Sdk/10.0.401/dotnet-sdk-10.0.401-win-x86.zip",
+      "sha512": "cfb800a0631281546708fb12a00ece6a1657949c7f67d85bfe1ec1909e75c80618673bc4a843d94bab1b8e9bddfe3a971f53058db37a8bd2338b3fba038af7db",
+      "archive": "dotnet-sdk-10.0.401-win-x86.zip"
     },
     {
       "name": "dotnet",
       "os": "linux",
       "arch": "x64",
-      "version": "10.0.203",
+      "version": "10.0.401",
       "executable": "dotnet",
-      "url": "https://builds.dotnet.microsoft.com/dotnet/Sdk/10.0.203/dotnet-sdk-10.0.203-linux-x64.tar.gz",
-      "sha512": "fdc36a27285b6f39b625814454f4dd3e76f2259c1279d0317d7fa297514bba607de323290d42caf67f62b9081ab26b6edb079e00f2b8c709c5826d3349a451d9",
-      "archive": "dotnet-sdk-10.0.203-linux-x64.tar.gz"
+      "url": "https://builds.dotnet.microsoft.com/dotnet/Sdk/10.0.401/dotnet-sdk-10.0.401-linux-x64.tar.gz",
+      "sha512": "51c8b999af9e8dd9998c9edc5944e19a90788862068acd38694e098889054ce8c23d4f0c5cccfa16bf187d044562359e5ee69a9f8ad0bbe913ba90311fbce25b",
+      "archive": "dotnet-sdk-10.0.401-linux-x64.tar.gz"
     },
     {
       "name": "dotnet",
       "os": "linux",
       "arch": "arm64",
-      "version": "10.0.203",
+      "version": "10.0.401",
       "executable": "dotnet",
-      "url": "https://builds.dotnet.microsoft.com/dotnet/Sdk/10.0.203/dotnet-sdk-10.0.203-linux-arm64.tar.gz",
-      "sha512": "7fbc8e8b20b6d6cb40269544ea4b5e919dd7fc7b066b429f32e7fa9087224f17445b90c7807c46745cc42f299dd7ef65abd023bec03fc341ce07a5bb52a59218",
-      "archive": "dotnet-sdk-10.0.203-linux-arm64.tar.gz"
+      "url": "https://builds.dotnet.microsoft.com/dotnet/Sdk/10.0.401/dotnet-sdk-10.0.401-linux-arm64.tar.gz",
+      "sha512": "58ace73ced6b4360754689a686bdfb8a317f4da6cb8bb416dbc7d0ba9f47e43e3c09f5eb1f1a1cfaacbd10df9558da4882bf2a5e195d6ab56a02c1f9f76102ed",
+      "archive": "dotnet-sdk-10.0.401-linux-arm64.tar.gz"
     },
     {
       "name": "dotnet",
       "os": "osx",
       "arch": "x64",
-      "version": "10.0.203",
+      "version": "10.0.401",
       "executable": "dotnet",
-      "url": "https://builds.dotnet.microsoft.com/dotnet/Sdk/10.0.203/dotnet-sdk-10.0.203-osx-x64.tar.gz",
-      "sha512": "f324adf04eac222df3ebb9be1b824306ccc112bd9caed0657ec65a1d2e47dcf52f863c5e124a58d7aeff5f4fdb9a186562aafecc9a1ac5ee4cc61f462628ea0e",
-      "archive": "dotnet-sdk-10.0.203-osx-x64.tar.gz"
+      "url": "https://builds.dotnet.microsoft.com/dotnet/Sdk/10.0.401/dotnet-sdk-10.0.401-osx-x64.tar.gz",
+      "sha512": "33401b4a2da8554e3306db6072ea8569d9fcc608509c271e0aa4b39e7cc432da3631f14e7e1e2445d67d72550d18ce44a8bbd2382a756867ad2edab6b1c963c0",
+      "archive": "dotnet-sdk-10.0.401-osx-x64.tar.gz"
     },
     {
       "name": "dotnet",
       "os": "osx",
       "arch": "arm64",
-      "version": "10.0.203",
+      "version": "10.0.401",
       "executable": "dotnet",
-      "url": "https://builds.dotnet.microsoft.com/dotnet/Sdk/10.0.203/dotnet-sdk-10.0.203-osx-arm64.tar.gz",
-      "sha512": "73de158cf9578c97d6aaec645457f7539615228a9974f8854816833fbc33861f31ef48d47786387eea2c1e45d7ce96c98ab760ec9f5b76009d91d83e3b87c035",
-      "archive": "dotnet-sdk-10.0.203-osx-arm64.tar.gz"
+      "url": "https://builds.dotnet.microsoft.com/dotnet/Sdk/10.0.401/dotnet-sdk-10.0.401-osx-arm64.tar.gz",
+      "sha512": "69f64eb00dc045398755c440b152225d544301a345a146a16e86a56a0c52b7c94b2c331520e976dbb821f18d31930aafbd25bb85961e3517e0665414ce0cbcff",
+      "archive": "dotnet-sdk-10.0.401-osx-arm64.tar.gz"
     },
     {
       "name": "azcopy",
       "os": "linux",
       "arch": "amd64",
-      "version": "10.32.3",
-      "executable": "azcopy_linux_amd64_10.32.3/azcopy",
-      "url": "https://github.com/Azure/azure-storage-azcopy/releases/download/v10.32.3/azcopy_linux_amd64_10.32.3.tar.gz",
-      "sha512": "66a81fcf996c561d3316bb22df7552537504f139cfdb9e5aefdaa6f26838b56d26965f30e856a2399b50ff2a3258a199f7093072f157f78fb210cd38858fb26a",
-      "archive": "azcopy_linux_amd64_10.32.3.tar.gz"
+      "version": "10.32.8",
+      "executable": "azcopy_linux_amd64_10.32.8/azcopy",
+      "url": "https://github.com/Azure/azure-storage-azcopy/releases/download/v10.32.8/azcopy_linux_amd64_10.32.8.tar.gz",
+      "sha512": "b71a33d5a3c97bc093d97a15b2dc1a3729e8530861e33ffb6f2218fb21e6787c13c0e172b509cfe17d67075ac5d2d652e374c28e23714dc40aafddccf57a0d16",
+      "archive": "azcopy_linux_amd64_10.32.8.tar.gz"
     },
     {
       "name": "azcopy",
       "os": "linux",
       "arch": "arm64",
-      "version": "10.32.3",
-      "executable": "azcopy_linux_arm64_10.32.3/azcopy",
-      "url": "https://github.com/Azure/azure-storage-azcopy/releases/download/v10.32.3/azcopy_linux_arm64_10.32.3.tar.gz",
-      "sha512": "fc65652097f82f76e8175d344ba4eee920aca14522d6c974796ac1dc2559a7fdbe845d857cd3908b7b4b2e294d5a8eee4280747479d1af6271f078ee98f29523",
-      "archive": "azcopy_linux_arm64_10.32.3.tar.gz"
+      "version": "10.32.8",
+      "executable": "azcopy_linux_arm64_10.32.8/azcopy",
+      "url": "https://github.com/Azure/azure-storage-azcopy/releases/download/v10.32.8/azcopy_linux_arm64_10.32.8.tar.gz",
+      "sha512": "56e6f24ca9267b684fa66edacea5496945156f7ebc011e9c3ce62163a70752292e0f6ae70bc8c848e6a48d0bb21f29e95036595e2661a3fc75670ab43142295e",
+      "archive": "azcopy_linux_arm64_10.32.8.tar.gz"
     },
     {
       "name": "azcopy",
       "os": "osx",
       "arch": "amd64",
-      "version": "10.32.3",
-      "executable": "azcopy_darwin_amd64_10.32.3/azcopy",
-      "url": "https://github.com/Azure/azure-storage-azcopy/releases/download/v10.32.3/azcopy_darwin_amd64_10.32.3.zip",
-      "sha512": "f50223fea93f4b249b245c6dede4643b07bacd6eac1708ec324b9b12690f20d83af3e9d8244ee6b79b9562fda605454b14715ef953f51c6f5b94ae5f37b62d01",
-      "archive": "azcopy_darwin_amd64_10.32.3.zip"
+      "version": "10.32.8",
+      "executable": "azcopy_darwin_amd64_10.32.8/azcopy",
+      "url": "https://github.com/Azure/azure-storage-azcopy/releases/download/v10.32.8/azcopy_darwin_amd64_10.32.8.zip",
+      "sha512": "9e1fb2cac5e064485628145fbee7769226df15809259bdeaeb8268c617ab2734758839e0681a057d8b51f09880bb467cf9d05ffe81d9918c2e84afb7ae7836bf",
+      "archive": "azcopy_darwin_amd64_10.32.8.zip"
     },
     {
       "name": "azcopy",
       "os": "osx",
       "arch": "arm64",
-      "version": "10.32.3",
-      "executable": "azcopy_darwin_arm64_10.32.3/azcopy",
-      "url": "https://github.com/Azure/azure-storage-azcopy/releases/download/v10.32.3/azcopy_darwin_arm64_10.32.3.zip",
-      "sha512": "f75e678abed47fb7dddf92e25baf6223cdfdd080921024baed588123eb8ed81f665c217c6cdb4fc957c0d7d1728e7bdcfe1bb3a9cc9a36e8ddd4f392adc708f0",
-      "archive": "azcopy_darwin_arm64_10.32.3.zip"
+      "version": "10.32.8",
+      "executable": "azcopy_darwin_arm64_10.32.8/azcopy",
+      "url": "https://github.com/Azure/azure-storage-azcopy/releases/download/v10.32.8/azcopy_darwin_arm64_10.32.8.zip",
+      "sha512": "46c5305f97801c1b048953e09d32b457102a28ccfc004e2238e2533bbb85d61ab09201d258d3bf73d5f2c65b2999b1d1bb398991797e2d3610aa1b95660d0b05",
+      "archive": "azcopy_darwin_arm64_10.32.8.zip"
     },
     {
       "name": "azcopy",
       "os": "windows",
       "arch": "amd64",
-      "version": "10.32.3",
-      "executable": "azcopy_windows_amd64_10.32.3/azcopy.exe",
-      "url": "https://github.com/Azure/azure-storage-azcopy/releases/download/v10.32.3/azcopy_windows_amd64_10.32.3.zip",
-      "sha512": "9294d2dcbc310ddce9c6d697a396cb564c8bb0d1f531f353e98d73273e5af78bd992e5c2d8706f9132d07bea819243c17d90f39e9bbb5b40d48de57f07740096",
-      "archive": "azcopy_windows_amd64_10.32.3.zip"
+      "version": "10.32.8",
+      "executable": "azcopy_windows_amd64_10.32.8/azcopy.exe",
+      "url": "https://github.com/Azure/azure-storage-azcopy/releases/download/v10.32.8/azcopy_windows_amd64_10.32.8.zip",
+      "sha512": "569c9a85263c8af92933758f4dfd9da3e394d90c9159166667cd95c75409079180e1b94d0bbd673fdc4a1a8044bd3eac1c1893d8d807302de24d665d41d844e0",
+      "archive": "azcopy_windows_amd64_10.32.8.zip"
     },
     {
       "name": "azcopy",
       "os": "windows",
       "arch": "arm64",
-      "version": "10.32.3",
-      "executable": "azcopy_windows_arm64_10.32.3/azcopy.exe",
-      "url": "https://github.com/Azure/azure-storage-azcopy/releases/download/v10.32.3/azcopy_windows_arm64_10.32.3.zip",
-      "sha512": "9f794442fb632959ff840ef1ab183e155f1079c004912f21aad80229a9033e1e2f1d4a60f31cc8780542e2a4c2fe08b6f651ed14906f5d62369afc4601328d4c",
-      "archive": "azcopy_windows_arm64_10.32.3.zip"
+      "version": "10.32.8",
+      "executable": "azcopy_windows_arm64_10.32.8/azcopy.exe",
+      "url": "https://github.com/Azure/azure-storage-azcopy/releases/download/v10.32.8/azcopy_windows_arm64_10.32.8.zip",
+      "sha512": "5f99e0639d0cc1433bbfe6185e1832e9618665cb3ea93ca37bc36ae313f3b43b283b0c66ade0201ed572e729726c6f53ef80fc7bac1d087931813012a2fd1683",
+      "archive": "azcopy_windows_arm64_10.32.8.zip"
     }
   ]
 }

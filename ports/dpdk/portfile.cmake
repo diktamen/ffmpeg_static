@@ -19,9 +19,19 @@ if(VCPKG_TARGET_IS_LINUX AND VCPKG_HOST_IS_LINUX)
   endif()
 
   execute_process(
-    COMMAND sh -c "ldd --version | head -n1 | rev | cut -d' ' -f 1 | rev"
-    OUTPUT_VARIABLE GLIBC_VERSION
-    OUTPUT_STRIP_TRAILING_WHITESPACE)
+    COMMAND ldd --version
+    OUTPUT_VARIABLE LDD_VERSION_OUTPUT
+    ERROR_VARIABLE LDD_VERSION_ERROR
+    RESULT_VARIABLE LDD_VERSION_RESULT)
+  if(NOT LDD_VERSION_RESULT EQUAL 0)
+    message(FATAL_ERROR "Failed to query glibc version: ${LDD_VERSION_ERROR}")
+  endif()
+
+  string(REGEX MATCH "^[^\r\n]*" LDD_VERSION_LINE "${LDD_VERSION_OUTPUT}")
+  string(REGEX MATCH "([0-9]+\\.[0-9]+(\\.[0-9]+)?)$" GLIBC_VERSION "${LDD_VERSION_LINE}")
+  if(NOT GLIBC_VERSION)
+    message(FATAL_ERROR "Failed to parse glibc version from: ${LDD_VERSION_LINE}")
+  endif()
 
   if(GLIBC_VERSION VERSION_LESS 2.7)
     message(
@@ -80,6 +90,12 @@ endif()
 
 set(DISABLE_DRIVERS "regex/cn9k")
 
+if("gpu-cuda" IN_LIST FEATURES)
+  vcpkg_find_cuda(OUT_CUDA_TOOLKIT_ROOT CUDA_TOOLKIT_ROOT)
+  set(ENV{CFLAGS} "$ENV{CFLAGS} -I${CUDA_TOOLKIT_ROOT}/include")
+else()
+  string(APPEND DISABLE_DRIVERS ",gpu/cuda")
+endif()
 if(NOT "mlx5" IN_LIST FEATURES)
   string(APPEND DISABLE_DRIVERS ",common/mlx5,compress/mlx5,crypto/mlx5,net/mlx5,regex/mlx5,vdpa/mlx5")
 endif()
