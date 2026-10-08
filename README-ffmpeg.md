@@ -13,7 +13,8 @@ not stock vcpkg lives in these places:
 | `build-ffmpeg-static.ps1`, `build-ffmpeg-static-x64.ps1` | Builds the audio-only static libs |
 | `clean.bat` | Wipes build dirs and the local binary cache |
 
-Branch `feature/static-ffmpeg` carries all of this. `master` tracks upstream.
+All of this lives on `master`, which is the fork's working branch: upstream vcpkg is
+merged into it periodically (see "Updating from upstream").
 
 ## Why this repo exists
 
