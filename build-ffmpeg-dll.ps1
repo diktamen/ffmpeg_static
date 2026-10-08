@@ -20,11 +20,10 @@ foreach ($dir in @("buildtrees", "installed", "packages")) {
     }
 }
 
-Write-Host "Building FFmpeg as DLLs for x64, x86, and arm64 architectures..."
+Write-Host "Building FFmpeg as DLLs for x64 and arm64 architectures..."
 
 & "$PSScriptRoot\vcpkg.exe" install `
     "ffmpeg[ffmpeg,avcodec,avdevice,avfilter,avformat,core,swresample,swscale,mp3lame,opus,speex,vorbis,ffplay,ffprobe]:x64-windows-static-md" `
-    "ffmpeg[ffmpeg,avcodec,avdevice,avfilter,avformat,core,swresample,swscale,mp3lame,opus,speex,vorbis,ffplay,ffprobe]:x86-windows-static-md" `
     "ffmpeg[ffmpeg,avcodec,avdevice,avfilter,avformat,core,swresample,swscale,mp3lame,opus,speex,vorbis,ffplay,ffprobe]:arm64-windows-static-md" `
     --overlay-ports=overlays `
     --overlay-triplets=triplets `
@@ -38,10 +37,13 @@ if ($LASTEXITCODE -ne 0) {
 
 Write-Host ""
 Write-Host "Deploying to C:\libraries\ffmpeg_dll\..."
-foreach ($arch in @("x64", "x86", "arm64")) {
+foreach ($arch in @("x64", "arm64")) {
     $triplet = "$arch-windows-static-md"
     $dest = "C:\libraries\ffmpeg_dll\$arch"
 
+    # Wipe the destination first so files from a previous FFmpeg version
+    # (e.g. avcodec-62.dll next to avcodec-63.dll) do not accumulate.
+    if (Test-Path $dest) { Remove-Item -Recurse -Force $dest }
     New-Item -ItemType Directory -Force $dest | Out-Null
     Copy-Item "installed\$triplet\*" $dest -Recurse -Force
 
